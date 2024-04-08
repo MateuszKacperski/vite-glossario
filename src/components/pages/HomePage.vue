@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios'
+const defaultUrl = 'http://localhost:8000/api/words/'
   export default {
     name: 'HomePage',
     data() {
@@ -7,7 +9,17 @@
         }
     },
     methods: {
-        
+        fetchWords() {
+            axios.get(defaultUrl).then(res => {
+                console.log(res.data)
+            })
+            
+            
+               
+        }
+    },
+    created() {
+        this.fetchWords();
     }
   }
 </script>
