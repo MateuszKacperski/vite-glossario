@@ -1,7 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 export default {
-  name: 'Boolfolio',
+  name: 'Glossario',
   components: { AppHeader },
 }
 </script>
