@@ -25,6 +25,7 @@ const defaultUrl = 'http://localhost:8000/api/words/'
 
 <template>
     <div class="row">
+
             <WordCard v-for="word in words" :word="word"/> 
     </div>
 </template>
