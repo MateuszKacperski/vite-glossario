@@ -1,8 +1,10 @@
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import WordCard from '../words/WordCard.vue';
 const defaultUrl = 'http://localhost:8000/api/words/'
   export default {
     name: 'HomePage',
+    components: {WordCard},
     data() {
         return {
             words: []
@@ -11,11 +13,8 @@ const defaultUrl = 'http://localhost:8000/api/words/'
     methods: {
         fetchWords() {
             axios.get(defaultUrl).then(res => {
-                console.log(res.data)
+                this.words = res.data
             })
-            
-            
-               
         }
     },
     created() {
@@ -25,7 +24,9 @@ const defaultUrl = 'http://localhost:8000/api/words/'
 </script>
 
 <template>
-  <h1>ciao</h1>
+    <div class="row">
+            <WordCard v-for="word in words" :word="word"/> 
+    </div>
 </template>
 
 <style lang='scss' scoped>
